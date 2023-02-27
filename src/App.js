@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div className="container-sm p-2">
-      <header className="p-3 text-centre bg-dark text-light rounded-3">
+      <header className="p-3 text-center bg-dark text-light rounded-3">
         <h2>Activity Tracker</h2>
       </header>
       <div className="container">
