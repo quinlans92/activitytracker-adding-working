@@ -1,10 +1,13 @@
 import React from "react";
+
 // props = { onSubmitHandler: addClassMember }
 const TrackerForm = ({ onSubmitHandler }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let newEntry = {
-            activityName: e.target.activityName.value
+            activityName: e.target.activityName.value,
+            activityDate: e.target.date.value,
+            activityDistance: e.target.distance.value
         };
         e.target.activityName.value = "";
 
@@ -13,14 +16,14 @@ const TrackerForm = ({ onSubmitHandler }) => {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <label>Name: </label>
+                <label>Add new Activity to list: </label>
                 <input type="text" name="activityName" placeholder="Enter Name" />
-            </div>
-            <div>
                 <label>Date</label>
-                <input id="activityDate" type="date" placeholder="date" />
+                <input type="date" name="date" placeholder="date" />
+                <label>Distance</label>
+                <input type="number" name="distance" placeholder="km" />
             </div>
-            <input type="submit" className="btn btn primary" value="Add" />
+            <input type="submit" className="btns" value="Add" />
         </form>
     );
 }

@@ -6,11 +6,9 @@ import { useState } from "react";
 
 const sampleActivity = [
   {
-    activityName: "Run"
-  },
-  {
-    activityName: "Swim"
-  },
+    id: 1,
+    activityName: ""
+  }
 
 ];
 
@@ -30,17 +28,6 @@ function App() {
   };
 
   return (
-
-
-    // <div id="App">
-    //   <div options="select-container">
-    //     <select>
-    //       {sampleActivity.map((sampleActivity) => (
-    //         <option value={sampleActivity.id}>{sampleActivity.activityName}</option>
-    //       ))}
-    //     </select>
-    //   </div>
-    // </div>
     <div className="container-sm p-2">
       <header className="p-3 text-centre bg-dark text-light rounded-3">
         <h2>Activity Tracker</h2>
