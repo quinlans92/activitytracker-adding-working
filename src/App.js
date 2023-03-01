@@ -6,8 +6,7 @@ import { useState } from "react";
 
 const sampleActivity = [
   {
-    id: 1,
-    activityName: ""
+
   }
 
 ];
@@ -20,7 +19,7 @@ function App() {
   const [activityEntry, setActivityEntry] = useState(sampleActivity);
 
   const addActivityEntry = (newFormEntry) => {
-    let randomId = Math.floor(Math.random() * 10) + 1
+    let randomId = Math.floor(Math.random() * 100000) + 1
 
     newFormEntry.id = randomId;
 
@@ -34,14 +33,14 @@ function App() {
       </header>
       <div className="container">
         <div className='row justify-content-center'>
-          <div className='col-4'>
+          <div className='col-12'>
             <ActivityList activity={activityEntry} />
           </div>
         </div>
       </div>
       <div className="container">
         <div className='row justify-content-center'>
-          <div className='col-4'>
+          <div className='col-12'>
             <TrackerForm onSubmitHandler={addActivityEntry} />
           </div>
         </div>
