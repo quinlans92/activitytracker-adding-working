@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 
 
-const ActivityList = ({ activity }) => {
+const ActivityList = ({ activity, onDelete }) => {
+
     return (
         <table className='table'>
             <thead>
@@ -21,6 +22,9 @@ const ActivityList = ({ activity }) => {
                         <td>{performed.startTime}</td>
                         <td>{performed.endTime}</td>
                         <td>{performed.activityDistance}</td>
+                        <td>
+                            <button onClick={() => onDelete(performed.id)}>Delete</button>
+                        </td>
                     </tr>
                 ))}
             </tbody>
@@ -28,11 +32,6 @@ const ActivityList = ({ activity }) => {
 
     )
 }
-
-
-
-
-
 
 
 export default ActivityList;

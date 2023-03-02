@@ -4,19 +4,15 @@ import ActivityList from './components/ActivityList';
 import { useState } from "react";
 
 
-const sampleActivity = [
-  {
-
-  }
-
-];
-
-
 
 
 function App() {
 
-  const [activityEntry, setActivityEntry] = useState(sampleActivity);
+  const [activityEntry, setActivityEntry] = useState([]);
+  const handleDelete = (id) => {
+    setActivityEntry(activityEntry.filter((performed) => performed.id !== id));
+  };
+
 
   const addActivityEntry = (newFormEntry) => {
     let randomId = Math.floor(Math.random() * 100000) + 1
@@ -24,6 +20,8 @@ function App() {
     newFormEntry.id = randomId;
 
     setActivityEntry([...activityEntry, newFormEntry]);
+
+
   };
 
   return (
@@ -34,7 +32,7 @@ function App() {
       <div className="container">
         <div className='row justify-content-center'>
           <div className='col-12'>
-            <ActivityList activity={activityEntry} />
+            <ActivityList activity={activityEntry} onDelete={handleDelete} />
           </div>
         </div>
       </div>
